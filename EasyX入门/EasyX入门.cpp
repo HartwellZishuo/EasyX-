@@ -8,12 +8,15 @@
 #include<stdlib.h>
 int main()
 {
-	initgraph(640, 480);	// 创建绘图窗口，大小为 640x480 像素
+	initgraph(640, 256);	// 创建绘图窗口，大小为 640x480 像素
 	setcolor(YELLOW);
 	setfillcolor(GREEN);
-	for (int y = 0; y <= 480; y = y + 48)
+	for (int y = 0; y < 256; y = y++)
+	{
+		setcolor(RGB(0, 0, y));
 		line(0, y, 640, y);
-	fillcircle(200, 200, 100);	// 画圆，圆心(200, 200)，半径 100
+	}
+	fillcircle(200, 120, 100);	// 画圆，圆心(200, 200)，半径 100
 	getchar();				// 按任意键继续
 	closegraph();			// 关闭绘图窗口
 	return 0;

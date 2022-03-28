@@ -11,9 +11,12 @@ int main()
 	initgraph(640, 256);	// 创建绘图窗口，大小为 640x480 像素
 	setcolor(YELLOW);
 	setfillcolor(GREEN);
-	for (int y = 0; y < 256; y = y++)
+	for (int y = 0; y < 256; y = y+5)
 	{
-		setcolor(RGB(0, 0, y));
+		if(y/5%2==1)
+			setcolor(RGB(0, 0, y));
+		else 
+			setcolor(RGB(y, 0, 0));
 		line(0, y, 640, y);
 	}
 	fillcircle(200, 120, 100);	// 画圆，圆心(200, 200)，半径 100
